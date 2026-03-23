@@ -53,9 +53,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-body {
+/*body {
 
-}
+}*/
 section {
 	margin-block: 6em;
 }
@@ -121,10 +121,29 @@ header {
 	object-fit: cover;
 	object-position: center;
 }
+
+/*Fadding à la transition*/
+.banner-img,
+#tag-line {
+  transition: opacity 0.4s ease;
+}
+
+.fade-out {
+  opacity: 0.5;
+}
+
+.fade-in {
+  opacity: 0.5;
+}
 /* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
 /* Gestion des fleches du carrousel */
-#banner .arrow {
+#banner .arrows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 	position: absolute;
+	width: 100%;
+	padding: 0 125px;
 }
 #banner .arrow_left {
 	left: 10px;
@@ -152,6 +171,7 @@ header {
 }
 /* Fin du code CSS pour le carousel */
 #banner p {
+    /*display: flex;*/
 	font-family: 'Roboto Slab', sans-serif;
 	font-weight: 900;
 	font-size: 50px;
