@@ -145,6 +145,9 @@ header {
 	width: 100%;
 	padding: 0 125px;
 }
+#banner .arrows:hover {
+    cursor: pointer;
+}
 #banner .arrow_left {
 	left: 10px;
 }
@@ -159,12 +162,11 @@ header {
 }
 .dot {
 	margin-inline: 5px;
-	width: 13px;
-	height: 13px;
-	background-color: #ffffff00;
-	border: 3px solid #fff;
-	border-radius: 100%;
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);;
+	width: 11px;
+	height: 11px;
+	background-color: transparent;
+	border: 2px solid #ffffff;
+	border-radius: 50%;
 }
 .dot_selected {
 	background-color: #fff;
