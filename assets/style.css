@@ -160,6 +160,7 @@ header {
 	bottom: 40px;
 	display: flex;
 }
+
 .dot {
 	margin-inline: 5px;
 	width: 11px;
@@ -171,6 +172,11 @@ header {
 .dot_selected {
 	background-color: #fff;
 }
+
+.dot:hover {
+    cursor: pointer;
+}
+
 /* Fin du code CSS pour le carousel */
 #banner p {
     /*display: flex;*/
