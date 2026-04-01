@@ -53,9 +53,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-body {
+/*body {
 
-}
+}*/
 section {
 	margin-block: 6em;
 }
@@ -117,41 +117,71 @@ header {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	z-index: -1;
-	object-fit: cover;
 	object-position: center;
+	object-fit: cover;
+	opacity: 1;
+	z-index: -1;
 }
-/* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
-/* Gestion des fleches du carrousel */
-#banner .arrow {
+
+/*Fadding à la transition*/
+.banner-img, #tag-line {
+	transition: opacity 0.4s ease;
+}
+
+.fade {
+	opacity: 0.5;
+}
+
+/*Code CSS en prévision de l'ajout d'un carousel pour la bannière
+Gestion des fleches du carrousel */
+#banner .arrows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 	position: absolute;
+	width: 100%;
+	padding: 0 5%;
 }
-#banner .arrow_left {
+
+#banner .arrows:hover {
+    cursor: pointer;
+}
+
+/*#banner .arrow_left {
 	left: 10px;
 }
+
 #banner .arrow_right {
 	right: 10px;
-}
+}*/
+
 /* Gestion des points du carrousel */
 .dots {
 	position: absolute;
 	bottom: 40px;
 	display: flex;
 }
+
 .dot {
 	margin-inline: 5px;
-	width: 13px;
-	height: 13px;
-	background-color: #ffffff00;
-	border: 3px solid #fff;
-	border-radius: 100%;
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);;
+	width: 11px;
+	height: 11px;
+	background-color: transparent;
+	border: 2px solid #ffffff;
+	border-radius: 50%;
 }
+
 .dot_selected {
 	background-color: #fff;
 }
+
+.dot:hover {
+    cursor: pointer;
+}
+
 /* Fin du code CSS pour le carousel */
 #banner p {
+    /*display: flex;*/
 	font-family: 'Roboto Slab', sans-serif;
 	font-weight: 900;
 	font-size: 50px;
@@ -160,17 +190,21 @@ header {
 	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 	text-align: center;
 }
+
 #banner span {
 	display: block;
 	font-weight: 400;
 	font-size: 30px;
 }
+
 #about-us {
 	display: flex;
 }
+
 #about-us article, #about-us aside {
 	flex:1;
 }
+
 #about-us li {
 	background: url("./images/tricolor-icon.png") no-repeat left top;
 	font-size: 16px;
@@ -186,27 +220,34 @@ header {
 	align-items: flex-start;
 	flex-direction: row-reverse;
 }
+
 #products div, #products aside {
 	flex:1;
 }
+
 #products div {
 	padding: 0 6em;
 }
+
 #products h2 {
 	margin-top: 0;
 }
+
 .bg-yellow {
 	background-color: var(--third-color);
 }
+
 #question {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding-block: 3em;
 }
+
 #question h2 {
 	margin-bottom: 10px;
 }
+
 #question p {
 	margin-bottom: 20px;
 }
@@ -216,15 +257,18 @@ header {
 	flex-direction: column;
 	text-align: center;
 }
+
 #why-us > div{
 	display: flex;
 	justify-content: space-evenly;
 }
+
 #why-us article {
 	max-width: 320px;
 	display: flex;
 	flex-direction: column;
 }
+
 #why-us img {
 	width: 33%;
 	height: 150px;
@@ -237,13 +281,14 @@ header {
 .bg-lightblue{
 	background-color: #E6F4FB;
 }
+
 #contact {
 	margin-bottom: 0;
 }
+
 #contact article, #contact div {
 	flex:1;
 }
-
 
 #contact .container {
 	flex-direction: row;
@@ -262,9 +307,11 @@ header {
 	padding-left:1.5em;
 	width: 200px;
 }
+
 .inline-icon {
 	vertical-align: middle;
 }
+
 footer {
 	background-color: #28363D;
 	color: white;
@@ -274,15 +321,18 @@ footer {
 	font-size: 12px;
 	align-items: center;
 }
+
 footer div {
 
 	position: relative;
 }
+
 .footer-logo {
 	background-color: white;
 	max-width: 308px;
 	padding: 10px;
 }
+
 .footer-contact {
 	margin-bottom: 1em;
 	font-weight: 700;
