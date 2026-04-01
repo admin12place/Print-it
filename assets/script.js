@@ -14,6 +14,10 @@ const slides = [
 	{
 		"image":"./assets/images/slideshow/slide4.png",
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
+	},
+	{
+		"image":"./assets/images/slideshow/slide3.jpg",
+		"tagLine":"Grand choix de couleurs <span>de CMJN aux pantones</span>"
 	}
 ]
 //Variables des images et des fleches
@@ -22,12 +26,12 @@ const arrowRight = document.querySelector(".arrow_right")
 const nbSlides = slides.length;
 const bannerImg = document.querySelector('.banner-img');
 const tagLine = document.getElementById('tag-line');
-let index = 0;
+let index = 0;//Index de suivi des fleches
 
 
 //Variables des bullets
 const dotsContainer = document.getElementById('dotsContainer');
-let dotIndex = 0;
+let dotIndex = 0;//index de suivi des bullets
 
 //au chargement de la page
 slides.forEach((_, index) => {
@@ -44,7 +48,7 @@ slides.forEach((_, index) => {
 	dotList.forEach((_, dotIndex) => {
 		dotList[dotIndex].addEventListener('click', () => {
 		updateSlide(dotIndex)
-		index = dotIndex;
+		index = dotIndex;//Lier l'index des fleches et celui des bullets
 		console.log(index)
 		})
 	})
@@ -71,20 +75,20 @@ arrowLeft.addEventListener('click', () => {
 })
 
 function updateSlide(i) {
-  // fade-out
-  bannerImg.classList.add('fade-out');
-  tagLine.classList.add('fade-out');
+	// fade
+	bannerImg.classList.add('fade');
+	tagLine.classList.add('fade');
 
-  setTimeout(() => {
+	setTimeout(() => {
     // changement de contenu
     bannerImg.src = slides[i].image;
     tagLine.innerHTML = slides[i].tagLine;
     
     // fade-in
-    bannerImg.classList.remove('fade-out');
-    tagLine.classList.remove('fade-out');
+    bannerImg.classList.remove('fade');
+    tagLine.classList.remove('fade');
   }, 400); // même durée que le CSS
-  
+
     //Mise à jour des bullets
     if (document.querySelector('.dot_selected')) {
         document.querySelector('.dot_selected').classList.remove('dot_selected')
